@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* O * que dizer que qualquer elemento é para ter por padrao a fonte roboto*/ 
+*{
+    font-family: 'Roboto', sans-serif; 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+body, html {
+
+    color: #ffffff;
+    background-color: #000000;
+}
+
+a, a:hover, a:visited{
+    color: unset; /* Retirar a cor da referencia de a -- a:hover->Quando passa o mouse em cima e a:visited -> quando o link 
+    ja foi visitado*/
+    text-decoration: none; /* Retirar a o sublinado da referencia de a*/
+}
+
+header{
+    background: linear-gradient(180deg, #102347 0%, #181818 100%);
+    height:220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container img{
+    width: 235px;
+}
+
+.logo-container h1{
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.logo-container p{
+    font-size: 14px;
+    font-weight: 300px; /*peso da fonte*/
+}
+
+.card{
+    background-color: #283142;
+    border-radius: 10px;
+    padding: 40px 10px;/*delimitar espacamento interno*/
+}
+
+.container{
+    width: 100%; 
+    max-width: 900px; /*largura maxima*/
+    margin: auto; /* Alinhar ao centro*/
+}
+
+#sales{
+    padding: 40px 10px;/*delimitar espacamento interno*/
+}
+
+.sales-title{
+    color: #676FFF;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-control-container{
+    margin-bottom: 16px;
+    max-width: 300px;
+}
+
+.form-control{
+    width: 100%;
+    height: 46px;
+    background-color: #1B2531;
+    border: 1px solid #384459;
+    border-radius: 5px;
+    color: #9AAABE;
+    padding: 0px 20px;
+    font-size: 18px;
+}
+
+.sales-table{
+    width: 100%;
+    border-spacing: 0;/*espacamento entre as bordas*/
+    border-collapse: collapse; /*Aparecer a linha entre as tabelas*/
+}
+
+.sales-table thead{
+    height: 55px; /*altura*/ 
+    font-size: 16px;
+    color: #E9E9E9;
+    font-weight: 700; /*para ficar em negrito*/
+}
+
+.sales-table tbody{
+    font-size: 14px;
+    font-weight: 400; /*peso da fonte*/
+    color: #CFCFCF;
+    text-align: center;
+}
+
+.sales-table tbody tr{
+    height: 74px;
+    border-top: 1px solid #5f6e82;
+}
+
+.sales-table tbody tr:hover > td{
+    background-color: #384459;
+} /* Hover quando passar o mouse em cima fazendo um efeito de cor*/
+
+.sales-table tbody tr:nth-child(odd) {
+    background-color: #242c3b;
+}    /*eu quero qual o filho do tr exemplo filho impa sera (odd) ou seja quando a linha for
+impar ai a cor é diferente*/
+
+.red-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.red-btn{
+    height: 45px;
+    width: 45px; /*Largura*/
+    background: rgba(255, 107, 114, 0.1);
+    border: 1px solid #FF6B72;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /*Para aparcer a maozinha quando passar o mouse*/
+}
+
+.red-btn img{
+    width: 19px;
+}
+
+.show576{
+    display: none; /* Nao mostrar a data quando diminuir a tela*/
+} 
+
+.show992{
+    display: none; /* Nao mostrar a data quando diminuir a tela*/
+} 
+
+@media (min-width: 576px) {
+    .show576{
+        display: table-cell /*a data vai desaparecer a partir da largura for menor que 576px*/
+    } 
+    .card{
+        padding: 35px; /*quando passar de 576 o espaçamento vai para 35px*/
+    }
+    .sales-table tbody tr{
+        height: 55px;
+    }
+    .sales-table tbody{
+        font-size: 18px;
+    }
+} /*quando passar de 576 o espacamento vai para 35px e a data vai aparecer com o nome maior a partir da largura for menor que 576px */
+
+@media (min-width: 992px) {
+    .show992{
+        display: table-cell
+    } 
+}/*o ID, visitas e vendas vai desaparecer a partir da largura for menor que 992px*/
